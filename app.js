@@ -15,8 +15,12 @@ Serial# 1234998871109
 
 **/
 
-var machine = "http://localhost:3000/gumball";
-var endpoint = "http://localhost:3000/order";
+//var machine = "http://localhost:3000/gumball";
+//var endpoint = "http://localhost:3000/order";
+
+// Below is the IP address of Backend Ec2 instance
+var machine = "http://13.56.241.148:3000/gumball";
+var endpoint = "http://13.56.241.148:3000/order";
 
 // added in v3: handlebars
 // https://www.npmjs.org/package/express3-handlebars

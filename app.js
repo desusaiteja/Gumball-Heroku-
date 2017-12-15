@@ -36,6 +36,13 @@ var express = require('express');
 var Client = require('node-rest-client').Client;
 
 var app = express();
+
+var port = process.env.PORT || 9000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 9000");
+});
+
+
 app.use(express.bodyParser());
 app.use("/images", express.static(__dirname + '/images'));
 handlebars  = require('express3-handlebars');
@@ -206,9 +213,9 @@ app.get('/', handle_get ) ;
 app.post('/', handle_post ) ;
 
 
-console.log( "Server running on Port 8080..." ) ;
+//console.log( "Server running on Port 8080..." ) ;
 
-app.listen(8080);
+//app.listen(8080);
 
 
 /**

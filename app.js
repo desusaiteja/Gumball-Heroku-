@@ -37,11 +37,16 @@ var Client = require('node-rest-client').Client;
 
 var app = express();
 
+<<<<<<< HEAD
 var port = process.env.PORT || 9000;
 app.listen(port, "0.0.0.0", function() {
 console.log("Listening on Port 9000");
 });
 
+=======
+
+app.set('port', (process.env.PORT || 9999));
+>>>>>>> b0f3d028cbb0ca543ba7b32843a90242c519f2ec
 
 app.use(express.bodyParser());
 app.use("/images", express.static(__dirname + '/images'));
@@ -214,8 +219,19 @@ app.post('/', handle_post ) ;
 
 
 //console.log( "Server running on Port 8080..." ) ;
+<<<<<<< HEAD
 
 //app.listen(8080);
+=======
+
+//app.listen(8080);
+
+
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
+
+>>>>>>> b0f3d028cbb0ca543ba7b32843a90242c519f2ec
 
 
 /**

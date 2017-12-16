@@ -96,8 +96,9 @@ var page = function( req, res, state, ts, status ) {
     console.log( state ) ;
 
     var client = new Client();
+    var args = {headers: {"Host":"localapi"}};
             var count = "";
-            client.get( machine,
+            client.get( machine,args,
                 function(data, response_raw){
                     console.log(data);
                     //for(var key in data) {
@@ -135,7 +136,8 @@ var order = function( req, res, state, ts ) {
 
     var client = new Client();
             var count = 0;
-            client.post( endpoint, 
+    var args = {headers: {"Host":"localapi"}};
+            client.post( endpoint, args,
                 function(data, response_raw) {
                     jsdata = JSON.parse(data)
                     for(var key in jsdata) {
